@@ -35,7 +35,7 @@ No successful login observed (no 4624)
 
 index=* EventCode=4625 
 | bin _time span=1m 
-| stats count by _time src_ip EventCode 
+| stats count by _time src_ip 
 | where count > 49
 
 (Detects brute-force attempts exceeding 49 failed logins per minute.)
